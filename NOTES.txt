@@ -1,0 +1,32 @@
+NOTES 
+
+- randomize questions?
+- randomize order in which choices appear
+- question counter << js
+- how to make .choice background transarent... 
+- no matter what >> show correct choice. 
+--- if wrong choice selected, still show correct choice... 
+
+JSON as a literal object string in jquery >> {} << this is an object 
+ var message ={
+	user: 'name',
+	date: 'date',
+}
+^^^an object (message) with 4 properties 
+[] << an array
+-- an array of objects 
+-- gives you an easy way to manipulate a number of objects.... 
+-- a contain of objects... 
+
+AN ARRAY:
+var array = [{
+	properties: 'define',
+}];
+
+- an array of questions 
+-- question text
+-- solutions (choices)
+
+question {
+	choices: ['right', 'wrong'], 
+}

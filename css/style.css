@@ -1,0 +1,92 @@
+body {
+	font-family: 'Amatic SC';
+}
+#questionCounter {
+	float: right;
+	font-size: 4rem;
+	margin-right: 10%;
+}
+.question {
+	background: url("../images/river.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: auto;
+	padding: 45px;
+	width: 50%
+}
+.aQuestion {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+}
+.theChoices {
+    width: 40%;
+    margin: auto;
+}
+.choice {
+    display: block;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+.choice:before {
+  content: '\f1bb';
+  font-family: 'FontAwesome';
+  float: left;
+  color: black;
+  padding-right: 10%;
+}
+.wrongChoice{
+	color: red;
+	font-style: italic;
+	text-decoration: line-through;
+}
+.wrongChoice:before {
+	content: '\f00d';
+	font-family: 'FontAwesome';
+	float: left;
+	color: red;
+	padding-right: 10%;
+}
+.correctChoice {
+	color: #228B22;
+	font-style: italic;
+	font-size: 1.75rem;
+}
+.correctChoice:before {
+	content: '\f00c';
+	font-family: 'FontAwesome';
+	float: left;
+	color: #228B22;
+	padding-right: 10%;
+}
+.nextButton{ 
+    font-size: 2rem;
+    margin-left: 90%;
+}
+.nextButton:hover {
+	color: #228B22;
+	cursor: pointer;
+}
+.choice:hover:before {
+	color: #228B22;
+}
+.wrongChoice:hover:before {
+	color: red;
+}
+.choice:hover {
+	cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+    .question {
+		width: 80%
+    }
+}
+.results {
+	display: none;
+}
+h1.results {
+	font-size: 18px;
+}
