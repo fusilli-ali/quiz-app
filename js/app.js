@@ -60,6 +60,7 @@ $('.nextButton').click(function(){
         $('.questions').hide();
         $('.results').show();
         $('#TheScore').html(score);
+        $('#questionCounter').hide();
     }
 });
 
