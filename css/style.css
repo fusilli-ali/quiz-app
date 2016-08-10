@@ -90,3 +90,31 @@ body {
 h1.results {
 	font-size: 18px;
 }
+.disabled {
+	color: gray;
+}
+.disabled:hover {
+	cursor: default;
+}
+.disabled:before {
+	color: gray;
+}
+.disabled:hover:before {
+	color: gray;
+}
+.results {
+    background: url("../images/red-barn.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    padding: 45px;
+    width: 50%;
+    height: 620px;
+}
+.theResult {
+	float: right;
+}
+.theResult p {
+	font-size: 2rem;
+	text-align: right;
+}

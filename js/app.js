@@ -33,12 +33,12 @@ $(document).ready(function() {
 
 //global variables
     var currentQuestion = 0;
+    var score = 0;
 
 function newQuestion(questionArray){
     var e = $('.question');
     var question = e.find('.aQuestion');
     question.html(questionArray[currentQuestion].question);
-
     var answers = e.find('.theChoices');
     answers.empty();
     for(var i = 0; i < questionArray[currentQuestion].choices.length; i++){ 
@@ -46,24 +46,39 @@ function newQuestion(questionArray){
         answers.append('<span class="choice">' + c + '</span>')
      }
     $('#questionNumber').html(currentQuestion + 1)
+    $('.theChoices').on('click', '.choice', clickevent);
 }
 
 $('.nextButton').click(function(){
     currentQuestion = currentQuestion + 1;
-    newQuestion(theQuestions);
-    })
+    if(currentQuestion < theQuestions.length) {
+        newQuestion(theQuestions);
+    }
+    else {
+        console.log(score);
+        $(this).hide();
+        $('.questions').hide();
+        $('.results').show();
+        $('#TheScore').html(score);
+    }
+});
+
+    function clickevent(){
+        var index = $(this).index();
+        var correct = theQuestions[currentQuestion].correct;
+        $('.theChoices').off('click');
+        if(index === correct) {
+            $(this).addClass('correctChoice');
+            score = score + 1;
+            $('.choice:not(".correctChoice")').addClass('disabled');
+        }
+        else {
+            $(this).addClass('wrongChoice');
+            $('.choice:not(".wrongChoice")').addClass('disabled');
+            $('.choice:nth-child('+ (correct+1) +')').addClass('correctChoice').removeClass('disabled');
+        }
+    }
 
 newQuestion(theQuestions);
 
 });
-
-
-//answer selected >> 
-    // if theQuestions.correct chosen >> add .correctChoice
-    // else >> add .wrongchoice
-
-// keep track of number of correct answers
-    // create variable? each correct answer >> +1?
-    // if currentQuestion + 1 > 5 >> display results
-    // hide div.questions?
-    // do i need to build a new div w/ the design/HTML for the last page?
